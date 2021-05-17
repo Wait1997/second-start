@@ -31,7 +31,8 @@ module.exports = {
     'import/resolver': {
       node: {
         extensions: ['.tsx', '.ts', '.js', '.json']
-      }
+      },
+      typescript: {}
     }
   },
   rules: {
@@ -80,14 +81,15 @@ module.exports = {
     'unicorn/prefer-query-selector': ERROR,
     'unicorn/no-null': OFF,
     'unicorn/no-array-reduce': OFF,
+    'unicorn/import-style': OFF,
 
     '@typescript-eslint/no-useless-constructor': ERROR,
     '@typescript-eslint/no-empty-function': WARN,
-    '@typescript-eslint/no-var-requires': ERROR,
+    '@typescript-eslint/no-var-requires': OFF,
     '@typescript-eslint/explicit-function-return-type': OFF,
     '@typescript-eslint/explicit-module-boundary-types': OFF,
     '@typescript-eslint/no-explicit-any': OFF,
-    '@typescript-eslint/no-use-before-define': ERROR,
+    '@typescript-eslint/no-use-before-define': ERROR, // 禁止定义前使用
     '@typescript-eslint/no-unused-vars': WARN,
     'no-unused-vars': OFF,
 
@@ -112,11 +114,13 @@ module.exports = {
     'no-plusplus': OFF,
     'no-console': WARN,
     'class-methods-use-this': ERROR,
-    'jsx-quotes': [ERROR, 'prefer-single'],
+    'jsx-quotes': [ERROR, 'prefer-single'], // prefer-double or prefer-single
     'global-require': OFF, // 要求 require() 出现在顶层模块作用域中
     'no-use-before-define': WARN, // 禁止在变量定义之前使用它们
     'no-restricted-syntax': OFF, // 禁用特定的语法
     'no-var': WARN,
-    'no-continue': OFF
+    'no-continue': OFF,
+
+    'prettier/prettier': OFF
   }
 }
